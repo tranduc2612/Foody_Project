@@ -1,16 +1,51 @@
-import style from '~/_main.module.scss'
-import classNames from "classnames/bind"
-
-const cx = classNames.bind(style)
+import { useState, MouseEvent } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { privateRouter, publicRouter } from "~/routers/Index";
+import NotFound from "~/pages/notfound/Index";
+import { DefaultLayout } from "./layouts/Index";
 
 function App() {
+  let isLogin = false;
   return (
-    <>
-      <h1 className={cx('title')}>
-          hello
-      </h1>
-    </>
-  )
+    <Router>
+      <Routes>
+        {publicRouter.map((route, index) => {
+          const Page: any = route.page;
+          const Layout: any = route.layout || DefaultLayout;
+          return (
+            <Route
+              key={index}
+              path={route.path}
+              element={
+                <Layout>
+                  <Page />
+                </Layout>
+              }
+            />
+          );
+        })}
+
+        {isLogin &&
+          privateRouter.map((route, index) => {
+            const Page: any = route.page;
+            const Layout: any = route.layout || DefaultLayout;
+            return (
+              <Route
+                key={index}
+                path={route.path}
+                element={
+                  <Layout>
+                    <Page />
+                  </Layout>
+                }
+              />
+            );
+          })}
+
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
