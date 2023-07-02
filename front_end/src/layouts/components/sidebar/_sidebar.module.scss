@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     
-    width: 216px;
+    // width: 216px;
     height: 100vh;
     font-size: 1.4rem;
     font-weight: 700;
@@ -24,9 +24,19 @@
             display: block;
             width: fit-content;
         }
-
-        &-btn{
-
-        }
     }
+
+    &__body{
+        flex: 1;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 100%;
+    }
+}
+
+.diviver{
+    margin: 0 16px;
+    height: 0;
+    border-bottom: 1px solid #e3e3e3;
+    width: 70%;
 }

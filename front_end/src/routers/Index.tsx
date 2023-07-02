@@ -13,7 +13,12 @@ const publicRouter = [
     {
         path: '/login',
         page: Login,
-        layout: null
+        layout: DefaultLayout
+    },
+    {
+        path: '/about-us',
+        page: Login,
+        layout: DefaultLayout
     }
 ]
 

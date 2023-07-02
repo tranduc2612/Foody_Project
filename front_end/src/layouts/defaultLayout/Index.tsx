@@ -10,10 +10,10 @@ function DefaultLayout({children}: any) {
     return ( <>
         <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2}>
-                <Grid item xs={2}>
+                <Grid item xs={5} sm={3} md={4} lg={2}>
                     <SideBar />
                 </Grid>
-                <Grid item xs={10}>
+                <Grid item xs={7} sm={9} md={8} lg={10}>
                     <Header />
                     {children}
                     <Footer />
