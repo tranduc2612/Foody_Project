@@ -1,0 +1,12 @@
+.menu__item{
+    line-height:40px;
+}
+
+.custom-expand-icon {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+.custom-expand-icon.expanded {
+transform: rotate(90deg);
+}
+  

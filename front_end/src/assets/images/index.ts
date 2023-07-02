@@ -1,5 +1,7 @@
+import img_logo from "./logo/yummly.svg";
+
 const images = {
-  logo: require("./logo/yummly.svg").default,
+  logo: img_logo,
 };
 
 export default images;
