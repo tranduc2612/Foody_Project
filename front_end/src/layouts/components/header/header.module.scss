@@ -1,0 +1,32 @@
+.header{
+    
+    position: relative;
+
+    &__img{
+        position: absolute;
+        top: 0;
+        z-index: 10;
+
+        &:nth-child(1){
+            z-index: 10;
+            right: 0;
+        }
+
+        &:nth-child(2){
+            z-index: 10;
+            right: 60px;
+            top: 80px;
+        }
+
+        &:nth-child(3){
+            z-index: 10;
+            left: 0;
+            top: -105px;
+        }
+
+        &:nth-child(4){
+            z-index: 0;
+            width: 100%;
+        }
+    }
+}
