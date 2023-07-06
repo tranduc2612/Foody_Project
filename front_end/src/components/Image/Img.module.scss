@@ -1,0 +1,25 @@
+.custom_img{
+    object-fit: contain;
+
+    &.sm{
+        width: 40px;
+        height: 40px; 
+    }
+
+    &.md{
+        width: 80px;
+        height: 80px; 
+    }
+
+    &.lg{
+        width: 150px;
+        height: 150px; 
+    }
+
+    &.border{
+        border-radius: 10px;
+    }
+}
+
+
+

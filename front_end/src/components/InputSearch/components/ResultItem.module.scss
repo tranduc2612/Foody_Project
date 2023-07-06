@@ -1,0 +1,70 @@
+.search__result{
+    &-list{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    &-item{
+        display: flex;
+        justify-content:space-between;
+        padding: 10px 15px;
+        font-size:2rem;
+        font-weight: 600;
+        background-color: var(--white-color);
+        margin: 0 0 3px 0;
+        cursor: pointer;
+        transition: background-color .3s linear;
+
+        &:last-child{
+            margin-bottom: 0px;
+        }
+
+        &:hover{
+            background-color: var(--hover-color-gray);
+        }
+    }
+
+    &-left{
+        display: flex;
+    }
+
+    &-right{
+        display: flex;
+    }
+
+    &-info{
+        margin-left: 10px;
+    }
+
+    &-food-name{
+        font-size:1.6rem;
+        margin-bottom: 5px;
+        color: var(--text-color);
+        transition: color .3s linear;
+
+        &:hover{
+            color: var(--green-primary);
+        }
+
+    }
+
+    &-food-author{
+        font-size:1.4rem;
+        color: var(--text-light-color);
+        transition: color .3s linear;
+        
+       &:hover{
+        color: var(--green-primary);
+       }
+    }
+
+    &-food-created{
+        font-size: 1.4rem;
+        color: var(--text-light-color);
+        transition: color .3s linear;
+
+        &:hover{
+            color: var(--green-primary);
+        }
+    }
+}

@@ -2,7 +2,7 @@ import { FC } from "react";
 import "./GlobalStyles.scss";
 
 type PropTypes = {
-  children: React.ReactElement;
+  children: React.ReactNode;
 };
 
 function GlobalStyles({ children }: PropTypes) {
