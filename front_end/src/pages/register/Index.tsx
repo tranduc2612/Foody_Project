@@ -1,9 +1,9 @@
 import classNames from "classnames/bind";
-import styles from "./Login.module.scss";
+import styles from "./Register.module.scss";
 import images from "~/assets/images";
 import Field from "~/components/Field/Field";
 import MyButton from "~/components/ButtonLink/Index";
-import { Formik, Form, ErrorMessage } from "formik";
+import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
 
@@ -13,12 +13,18 @@ const SignupSchema = Yup.object().shape({
   account: Yup.string()
     .max(50, "Quá kí tự !")
     .required("Không bỏ trống trường này !"),
+  email: Yup.string()
+    .email("Email không đúng định dạng !")
+    .required("Không bỏ trống trường này !"),
   password: Yup.string()
     .max(50, "Quá kí tự !")
     .required("Không bỏ trống trường này !"),
+  password2: Yup.string()
+    .oneOf([Yup.ref("password")], "Mật khẩu không trùng khớp !")
+    .required("Không bỏ trống trường này !"),
 });
 
-function Login() {
+function Register() {
   return (
     <div className={"body__form-page"}>
       <div className={cx("box_form", { login__form: true })}>
@@ -35,8 +41,10 @@ function Login() {
         </div>
         <Formik
           initialValues={{
-            account: null,
-            password: null,
+            account: "",
+            email: "",
+            password: "",
+            password2: "",
           }}
           onSubmit={(values) => {
             console.log(values);
@@ -55,6 +63,18 @@ function Login() {
                 name={"account"}
                 placeholder={"Nhập tài khoản..."}
               />
+
+              <Field
+                validMessage={errors.email}
+                isValid={errors.email}
+                type="text"
+                value={values.email}
+                onChange={handleChange}
+                label={"Email"}
+                name={"email"}
+                placeholder={"Nhập email..."}
+              />
+
               <Field
                 validMessage={errors.password}
                 isValid={errors.password}
@@ -65,22 +85,34 @@ function Login() {
                 name={"password"}
                 placeholder={"Nhập mật khẩu..."}
               />
+
+              <Field
+                validMessage={errors.password2}
+                isValid={errors.password2}
+                type="password"
+                value={values.password2}
+                onChange={handleChange}
+                label={"Nhập lại mật khẩu"}
+                name={"password2"}
+                placeholder={"Nhập lại mật khẩu..."}
+              />
+
               <MyButton
                 classNames={cx("custom-btn")}
                 typeStyle="primary"
-                content="Đăng nhập"
+                content="Đăng kí"
                 typeBtn="submit"
               />
             </Form>
           )}
         </Formik>
         <div className={cx("switch__page-auth")}>
-          <span>Bạn đã có tài khoản chưa ? Nhấn đây để </span>
-          <Link to="/register">đăng kí</Link>
+          <span>Bạn đã có tài khoản ? Nhấn đây để </span>
+          <Link to="/login">đăng nhập</Link>
         </div>
       </div>
     </div>
   );
 }
 
-export default Login;
+export default Register;

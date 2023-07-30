@@ -1,0 +1,94 @@
+.card{
+    $width-card: 210px;
+    $height-card: 350px;
+    $bg-hover-card: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.9));
+
+    height: $height-card;
+    width: 100%;
+    // border: 1px solid #333;
+    margin-bottom: 20px;
+
+
+    &__wrap{
+        position: relative;
+        overflow: hidden;
+        height: $width-card;
+        cursor: pointer;
+    }
+
+    &__img{
+        height:100%;
+    }
+
+    &__layer{
+        top: 0;
+        position: absolute;
+        height:100%;
+        width:100%;
+        background: $bg-hover-card;
+        transform: translateY($height-card - 120px);
+        transition: transform .5s linear;
+        opacity: 1;
+    }
+
+    &__wrap:hover &__layer{
+        transform: translateY(50%);
+    }
+
+    &__info{
+        display: flex;
+        justify-content: space-between;
+        margin-top:10px;
+
+        &-left{
+            flex:0.95;
+            display: flex;
+            flex-direction: column;
+
+            .card__food-name{
+                font-size: 1.5rem;
+                margin-bottom: 6px;
+                cursor: pointer;
+                color: var(--text-color);
+                transition: color .3s linear;
+
+                &:hover{
+                    color: var(--green-primary);
+                }
+
+            }
+
+            .card__author{
+                font-size: 1.3rem;
+                margin-bottom: 6px;
+                cursor: pointer;
+                color: var(--text-light-color);
+                transition: color .3s ease-in-out;
+
+                &:hover{
+                    color: var(--green-primary);
+                }
+            }
+
+            .card__price{
+                font-size: 1.4rem;
+                margin-bottom: 6px;
+            }
+        }
+
+        &-right{
+            display: flex;
+            flex-direction: column;
+
+            
+            .card__amount-people{
+                font-size: 1.3rem;
+                color: var(--text-light-color);
+
+                &:hover{
+                    color: var(--green-primary);
+                }
+            }
+        }
+    }
+}

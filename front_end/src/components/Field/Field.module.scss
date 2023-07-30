@@ -1,0 +1,46 @@
+.field-group{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.input{
+    width:100%;
+    padding: 10px 15px;
+    font-size:1.6rem;
+    outline: none;
+    border-radius: 10px;
+    color: var(--textColor);
+    border: 1px solid #c2c2c2;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    transition: border .25s linear;
+}
+
+
+
+.validation{
+    font-size:1.6rem;
+    font-weight: 500;
+    display: none;
+}
+
+
+
+.input:focus{
+    border: 1px solid var(--orange-primary);
+}
+
+.input.error{
+    border: 1px solid red;
+}
+
+.validation.error{
+    display:inline;
+    color: red;
+}
+
+.label{
+    font-size:1.4rem;
+    font-weight: 600;
+}

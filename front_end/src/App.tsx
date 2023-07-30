@@ -1,4 +1,3 @@
-import { useState, MouseEvent } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { privateRouter, publicRouter } from "~/routers/Index";
 import NotFound from "~/pages/notfound/Index";

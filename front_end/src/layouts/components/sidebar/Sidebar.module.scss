@@ -1,15 +1,16 @@
 .sidebar{
+    position: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
     
-    // width: 216px;
+    max-width: 220px;
     height: 100vh;
     font-size: 1.4rem;
     font-weight: 700;
     overflow: hidden;
 
-    z-index: 5005;
+    z-index: 9999;
     box-shadow: 0 0 2em rgba(0,0,0,0.12);
     background-color: var(--white);
 

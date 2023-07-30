@@ -1,16 +1,30 @@
 .custom__button{
     display: block;
     width: fit-content;
-    color: #fff;
     font-size: inherit;
     font-weight: inherit;
     height: 40px;
     padding: 0 32px;
     margin: 8px auto 0;
     cursor: pointer;
-
-    background-color: var(--green-primary);
     line-height: 40px;
-    border-radius: 999px;
-    
 }
+
+.default{
+    color: #fff;
+    background-color: var(--green-primary);
+    border-radius: 999px;
+}
+
+
+.primary{
+    color: #fff;
+    background-color: var(--orange-primary);
+    border-radius: 15px;
+}
+
+.outline{
+    color: var(--text-color);
+    background-color: var(--while-color);
+}
+

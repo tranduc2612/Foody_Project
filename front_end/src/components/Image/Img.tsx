@@ -3,7 +3,7 @@ import classNames from "classnames/bind";
 
 type PropTypes = {
   src: string;
-  size?: "xl" | "md" | "sm";
+  size?: "xl" | "md" | "sm" | "lg" | "f-width";
   classNames?: string;
   isBorder?: boolean;
 };
